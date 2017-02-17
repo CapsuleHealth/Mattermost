@@ -12,6 +12,7 @@ body {
     width: 100%;
 }
 
+// MODIFIED 2017-02-17: Changing footer height
 .sticky {
     background: $white;
 
@@ -22,7 +23,7 @@ body {
     .inner-wrap {
         > .row {
             &.content {
-                margin-bottom: -89px;
+                margin-bottom: -60px;
                 min-height: 100%;
             }
         }

@@ -5,7 +5,7 @@
     padding-bottom: 1em;
 
     .footer-link {
-        padding: 0 1.5em;
+        padding: 1.5em 1.5em 1em;
 
         &.copyright {
             color: $dark-gray;
@@ -21,10 +21,12 @@
     }
 }
 
+// MODIFIED 2017-02-17: Changing footer height
+
 .footer,
 .footer-pane,
 .footer-push {
-    height: 89px;
+    height: 60px;
 }
 
 

@@ -18,20 +18,7 @@ export default class NotLoggedIn extends React.Component {
     render() {
         const content = [];
 
-        if (global.window.mm_config.HelpLink) {
-            content.push(
-                <a
-                    key='help_link'
-                    id='help_link'
-                    className='pull-right footer-link'
-                    target='_blank'
-                    rel='noopener noreferrer'
-                    href={global.window.mm_config.HelpLink}
-                >
-                    <FormattedMessage id='web.footer.help'/>
-                </a>
-            );
-        }
+        // MODIFIED 2017-02-17: removed help link from footer
 
         if (global.window.mm_config.TermsOfServiceLink) {
             content.push(
@@ -78,6 +65,8 @@ export default class NotLoggedIn extends React.Component {
             );
         }
 
+        // MODIFIED 2017-02-17: Removing name
+        // MODIFIED 2017-02-17: Moving copyright notice into about page
         return (
             <div className='inner-wrap'>
                 <div className='row content'>
@@ -87,10 +76,6 @@ export default class NotLoggedIn extends React.Component {
                 <div className='row footer'>
                     <div className='footer-pane col-xs-12'>
                         <div className='col-xs-12'>
-                            <span className='pull-right footer-site-name'>{'Mattermost'}</span>
-                        </div>
-                        <div className='col-xs-12'>
-                            <span className='pull-right footer-link copyright'>{'© 2015-2016 Mattermost, Inc.'}</span>
                             {content}
                         </div>
                     </div>
