@@ -13,7 +13,8 @@ import * as AsyncClient from 'utils/async_client.jsx';
 import Client from 'client/web_client.jsx';
 import * as GlobalActions from 'actions/global_actions.jsx';
 
-import logoImage from 'images/logo.png';
+// MODIFIED 2017-02-17: changing logo
+import logoImage from 'images/capsule-connect-logo.svg';
 import ErrorBar from 'components/error_bar.jsx';
 
 import {FormattedMessage} from 'react-intl';
@@ -299,6 +300,7 @@ export default class SignupController extends React.Component {
             signupControls = this.renderSignupControls();
         }
 
+        // MODIFIED 2017-02-17: removing site name header
         return (
             <div>
                 <ErrorBar/>
@@ -315,9 +317,9 @@ export default class SignupController extends React.Component {
                         <img
                             className='signup-team-logo'
                             src={logoImage}
+                            alt={global.window.mm_config.SiteName}
                         />
                         <div className='signup__content'>
-                            <h1>{global.window.mm_config.SiteName}</h1>
                             <h4 className='color--light'>
                                 <FormattedMessage
                                     id='web.root.signup_info'
