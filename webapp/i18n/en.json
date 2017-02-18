@@ -1792,7 +1792,6 @@
   "signup_user_completed.choosePwd": "Choose your password",
   "signup_user_completed.chooseUser": "Choose your username",
   "signup_user_completed.create": "Create Account",
-  "signup_user_completed.emailHelp": "Valid email required for sign-up",
   "signup_user_completed.emailIs": "Your email address is <strong>{email}</strong>. You'll use this address to sign in to {siteName}.",
   "signup_user_completed.expired": "You've already completed the signup process for this invitation or this invitation has expired.",
   "signup_user_completed.gitlab": "with GitLab",

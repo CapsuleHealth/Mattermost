@@ -255,13 +255,10 @@ export default class SignupEmail extends React.Component {
 
     renderEmailSignup() {
         let emailError = null;
+
+        // MODIFIED 2017-02-17: removed help text
         let emailHelpText = (
-            <span className='help-block'>
-                <FormattedMessage
-                    id='signup_user_completed.emailHelp'
-                    defaultMessage='Valid email required for sign-up'
-                />
-            </span>
+            <span className='help-block'/>
         );
         let emailDivStyle = 'form-group';
         if (this.state.emailError) {
