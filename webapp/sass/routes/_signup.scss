@@ -1,13 +1,19 @@
 @charset 'UTF-8';
 
+// MODIFIED 2017-02-18: changing header to white text on primary color
+// background
 .signup-header {
-    background: $bg--gray;
+    background: $primary-color;
     line-height: 33px;
     padding: 0 1em .2em;
     width: 100%;
 
     .fa {
         margin-right: 5px;
+    }
+
+    a, a:hover {
+        color: #fff;
     }
 }
 
@@ -90,6 +96,7 @@
         margin: 2em 0;
     }
 
+    // MODIFIED 2017-02-18: changing text color
     p {
         color: #555555;
         line-height: 1.5;
@@ -354,6 +361,11 @@
         }
     }
 
+    // MODIFIED 2017-02-21: change outline color to match capsule theme
+    .has-error .form-control {
+        border-color: $red;
+    }
+
     .has-error {
         .control-label {
             @include border-radius(3px);
@@ -429,7 +441,7 @@
     }
 
     .color--light {
-        color: #777777;
+        color: #555555;
     }
 
     .margin--extra {

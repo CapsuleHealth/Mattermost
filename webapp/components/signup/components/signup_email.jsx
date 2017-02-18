@@ -314,11 +314,12 @@ export default class SignupEmail extends React.Component {
             emailContainerStyle = 'hidden';
         }
 
+        // MODIFIED 2017-02-18: changing h5 headers to use primary color
         return (
             <form>
                 <div className='inner__content'>
                     <div className={emailContainerStyle}>
-                        <h5><strong>
+                        <h5 className='primary-color'><strong>
                             <FormattedMessage
                                 id='signup_user_completed.whatis'
                                 defaultMessage="What's your email address?"
@@ -342,7 +343,7 @@ export default class SignupEmail extends React.Component {
                     </div>
                     {yourEmailIs}
                     <div className='margin--extra'>
-                        <h5><strong>
+                        <h5 className='primary-color'><strong>
                             <FormattedMessage
                                 id='signup_user_completed.chooseUser'
                                 defaultMessage='Choose your username'
@@ -363,7 +364,7 @@ export default class SignupEmail extends React.Component {
                         </div>
                     </div>
                     <div className='margin--extra'>
-                        <h5><strong>
+                        <h5 className='primary-color'><strong>
                             <FormattedMessage
                                 id='signup_user_completed.choosePwd'
                                 defaultMessage='Choose your password'
