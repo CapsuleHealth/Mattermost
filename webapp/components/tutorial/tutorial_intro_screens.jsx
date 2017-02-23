@@ -14,6 +14,9 @@ import {browserHistory} from 'react-router/es6';
 
 import AppIcons from 'images/appIcons.png';
 
+// MODIFIED 2017-02-23: adding logo
+import logoImage from 'images/capsule-connect-logo.svg';
+
 const NUM_SCREENS = 3;
 
 import React from 'react';
@@ -75,8 +78,18 @@ export default class TutorialIntroScreens extends React.Component {
     createScreenOne() {
         const circles = this.createCircles();
 
+        // MODIFIED 2017-02-23: adding welcome header
+        // MODIFIED 2017-02-23: adding logo
         return (
             <div>
+                <FormattedHTMLMessage
+                    id='tutorial_intro.screenOne.welcome'
+                    defaultMessage='<h3>Welcome to</h3>'
+                />
+                <img
+                    className='tutorial-team-logo'
+                    src={logoImage}
+                />
                 <FormattedHTMLMessage
                     id='tutorial_intro.screenOne'
                     defaultMessage='<h3>Welcome to:</h3>
