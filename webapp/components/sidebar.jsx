@@ -825,8 +825,15 @@ export default class Sidebar extends React.Component {
                             </a>
                         </li>
                     </ul>
+                    {/* MODIFIED 2017-02-23: add sidebar contact info */}
                     <ul className='nav nav-pills nav-stacked'>
-                        <li style={{color: 'white', padding: '0 0 0 0.5em'}}>
+                        <li
+                            style={{
+                                color: 'white',
+                                fontSize: '12px',
+                                padding: '0 0 0 10px'
+                            }}
+                        >
                             Capsule's pharmacists are<br />
                             always here to help<br />
                             Mon-Fri: 8am-10pm<br />
@@ -835,11 +842,7 @@ export default class Sidebar extends React.Component {
                             or email&nbsp;
                             <a
                                 href="mailto:doctors@capsulecares.com"
-                                style={{
-                                    display: 'inline',
-                                    fontSize: '12px',
-                                    padding: '0',
-                                }}
+                                style={{ display: 'inline', padding: '0' }}
                             >
                                 doctors@capsulecares.com
                             </a><br />
