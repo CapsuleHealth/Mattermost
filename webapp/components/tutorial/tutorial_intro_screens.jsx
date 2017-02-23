@@ -225,6 +225,7 @@ export default class TutorialIntroScreens extends React.Component {
             );
         }
 
+        // eslint-disable-next-line no-unused-vars
         let townSquareDisplayName = Constants.DEFAULT_CHANNEL_UI_NAME;
         if (this.props.townSquare) {
             townSquareDisplayName = this.props.townSquare.display_name;
@@ -240,13 +241,7 @@ export default class TutorialIntroScreens extends React.Component {
                 </h3>
                 {inviteText}
                 {supportInfo}
-                <FormattedMessage
-                    id='tutorial_intro.end'
-                    defaultMessage='Click “Next” to enter {channel}. This is the first channel teammates see when they sign up. Use it for posting updates everyone needs to know.'
-                    values={{
-                        channel: townSquareDisplayName
-                    }}
-                />
+                { /* MODIFIED 2017-02-23: removed tutorial intro end */}
                 {circles}
             </div>
         );
