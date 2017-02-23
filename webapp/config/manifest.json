@@ -1,6 +1,6 @@
 {
-    "name": "Mattermost",
-    "description": "Mattermost is an open source, self-hosted Slack-alternative",
+    "name": "Capsule Connect",
+    "description": "Capsule Connect brings all of your pharmacy communication to one secure, searchable place.",
     "icons": [{
         "src": "/static/images/favicon/android-chrome-192x192.png",
         "type": "image/png",
