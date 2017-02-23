@@ -7,7 +7,7 @@ import {checkIfTeamExists, createTeam} from 'actions/team_actions.jsx';
 import {track} from 'actions/analytics_actions.jsx';
 import Constants from 'utils/constants.jsx';
 
-import logoImage from 'images/logo.png';
+// MODIFIED 2017-02-22: removing logo
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -157,13 +157,10 @@ export default class TeamUrl extends React.Component {
             );
         }
 
+        // MODIFIED 2017-02-22: removing logo
         return (
             <div>
                 <form>
-                    <img
-                        className='signup-team-logo'
-                        src={logoImage}
-                    />
                     <h2>
                         <FormattedMessage
                             id='create_team.team_url.teamUrl'
