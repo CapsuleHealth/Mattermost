@@ -1814,6 +1814,7 @@
   "signup_user_completed.welcome": "Welcome to:",
   "signup_user_completed.whatis": "What's your office email address?",
   "signup_user_completed.withLdap": "With your AD/LDAP credentials",
+  "signup_user_completed.needHelp": "Need help? Call or text our friendly pharmacists at 212&#8209;675&#8209;3900",
   "sso_signup.find": "Find my teams",
   "sso_signup.gitlab": "Create team with GitLab Account",
   "sso_signup.google": "Create team with Google Apps Account",

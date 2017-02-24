@@ -501,6 +501,13 @@ export default class SignupEmail extends React.Component {
                         {emailSignup}
                         {serverError}
                         {terms}
+                        { /* MODIFIED 2017-02-23: added 'need help' text */ }
+                        <p>
+                            <FormattedHTMLMessage
+                                id='signup_user_completed.needHelp'
+                                defaultMessage='Need help? Call or text our friendly pharmacists at 212&#8209;675&#8209;3900'
+                            />
+                        </p>
                     </div>
                 </div>
             </div>
