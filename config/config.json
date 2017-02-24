@@ -40,7 +40,7 @@
         "EnableUserTypingMessages": true
     },
     "TeamSettings": {
-        "SiteName": "Mattermost",
+        "SiteName": "Capsule Connect",
         "MaxUsersPerTeam": 50,
         "EnableTeamCreation": true,
         "EnableUserCreation": true,
