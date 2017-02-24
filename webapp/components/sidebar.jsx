@@ -505,6 +505,14 @@ export default class Sidebar extends React.Component {
             icon = <div className='status'><i className='fa fa-globe'/></div>;
         } else if (channel.type === Constants.PRIVATE_CHANNEL) {
             icon = <div className='status'><i className='fa fa-lock'/></div>;
+        // MODIFIED 2017-02-24: pin capsule channel to top
+        } else if (channel.type === Constants.CAPSULE_CHANNEL) {
+            icon = (
+                <div
+                    style={{display: 'inline-block', marginRight: '5px', width: '16px', height: '16px'}}
+                    dangerouslySetInnerHTML={{__html: Constants.CAPSULE_ICON_SVG}}
+                />
+            );
         } else {
             // set up status icon for direct message channels (status is null for other channel types)
             icon = <StatusIcon status={channel.status}/>;
@@ -593,6 +601,14 @@ export default class Sidebar extends React.Component {
             return this.createChannelElement(channel);
         });
 
+        // MODIFIED 2017-02-24: pin capsule channel to top
+        // detect capsule channel and treat it differently
+        const capsuleChannel = this.state.publicChannels.filter((channel) => channel.name === 'capsule').pop();
+        capsuleChannel.type = Constants.CAPSULE_CHANNEL;
+        const capsuleChannelItem = this.createChannelElement(capsuleChannel);
+
+        // eslint-disable-next-line react/no-direct-mutation-state
+        this.state.publicChannels = this.state.publicChannels.filter((channel) => channel.name !== 'capsule');
         const publicChannelItems = this.state.publicChannels.map(this.createChannelElement);
 
         const privateChannelItems = this.state.privateChannels.map(this.createChannelElement);
@@ -790,6 +806,10 @@ export default class Sidebar extends React.Component {
                     className='nav-pills__container'
                     onScroll={this.onScroll}
                 >
+                    {/* MODIFIED 2017-02-24: pin capsule channel to top */}
+                    <ul className='nav nav-pills nav-stacked'>
+                        {capsuleChannelItem}
+                    </ul>
                     {favoriteItems.length !== 0 && <ul className='nav nav-pills nav-stacked'>
                         <li>
                             <h4>
