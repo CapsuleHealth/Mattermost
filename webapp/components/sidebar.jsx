@@ -834,23 +834,23 @@ export default class Sidebar extends React.Component {
                                 padding: '0 0 0 10px'
                             }}
                         >
-                            Capsule's pharmacists are<br />
-                            always here to help<br />
-                            Mon-Fri: 8am-10pm<br />
-                            Sat-Sun: 10am-6pm<br />
-                            Call or text 212-675-3900<br />
-                            or email&nbsp;
+                            {'Capsule\'s pharmacists are'}<br/>
+                            {'always here to help'}<br/>
+                            {'Mon-Fri: 8am-10pm'}<br/>
+                            {'Sat-Sun: 10am-6pm'}<br/>
+                            {'Call or text 212-675-3900'}<br/>
+                            {'or email '}
                             <a
-                                href="mailto:doctors@capsulecares.com"
-                                style={{ display: 'inline', padding: '0' }}
+                                href='mailto:doctors@capsulecares.com'
+                                style={{display: 'inline', padding: '0'}}
                             >
-                                doctors@capsulecares.com
-                            </a><br />
-                            E-prescribe to:<br />
+                                {'doctors@capsulecares.com'}
+                            </a><br/>
+                            {'E-prescribe to:'}<br/>
                             <strong>
-                                Capsule,<br />
-                                113 West 25th St.<br />
-                                NY, NY 10001
+                                {'Capsule'}<br/>
+                                {'113 West 25th St.'}<br/>
+                                {'NY, NY 10001'}
                             </strong>
                         </li>
                     </ul>
