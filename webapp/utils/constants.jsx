@@ -28,6 +28,7 @@ import githubIcon from 'images/themes/code_themes/github.png';
 import monokaiCSS from '!!file-loader?name=files/code_themes/[hash].[ext]!highlight.js/styles/monokai.css';
 import monokaiIcon from 'images/themes/code_themes/monokai.png';
 
+// eslint-disable-next-line no-unused-vars
 import defaultThemeImage from 'images/themes/organization.png';
 import mattermostDarkThemeImage from 'images/themes/mattermost_dark.png';
 import mattermostThemeImage from 'images/themes/mattermost.png';
@@ -224,6 +225,7 @@ export const TutorialSteps = {
     MENU_POPOVER: 3
 };
 
+// MODIFIED 2017-02-27: updating default theme
 // MODIFIED 2017-02-27: changed system name and icon
 export const Constants = {
     Preferences,
@@ -391,28 +393,28 @@ export const Constants = {
     THEMES: {
         default: {
             type: 'Organization',
-            sidebarBg: '#2071a7',
-            sidebarText: '#fff',
-            sidebarUnreadText: '#fff',
-            sidebarTextHoverBg: '#136197',
-            sidebarTextActiveBorder: '#7AB0D6',
-            sidebarTextActiveColor: '#FFFFFF',
-            sidebarHeaderBg: '#2f81b7',
-            sidebarHeaderTextColor: '#FFFFFF',
+            sidebarBg: '#fafafa',
+            sidebarText: '#333333',
+            sidebarUnreadText: '#333333',
+            sidebarTextHoverBg: '#e1e1e1',
+            sidebarTextActiveBorder: '#99bfbc',
+            sidebarTextActiveColor: '#111111',
+            sidebarHeaderBg: '#0f3c6c',
+            sidebarHeaderTextColor: '#ffffff',
             onlineIndicator: '#7DBE00',
-            awayIndicator: '#DCBD4E',
-            mentionBj: '#FBFBFB',
-            mentionColor: '#2071A7',
-            centerChannelBg: '#f2f4f8',
+            awayIndicator: '#ffd300',
+            mentionBj: '#0f3c6c',
+            mentionColor: '#ffffff',
+            centerChannelBg: '#ffffff',
             centerChannelColor: '#333333',
-            newMessageSeparator: '#FF8800',
-            linkColor: '#2f81b7',
-            buttonBg: '#1dacfc',
-            buttonColor: '#FFFFFF',
-            mentionHighlightBg: '#fff2bb',
-            mentionHighlightLink: '#2f81b7',
+            newMessageSeparator: '#ef4931',
+            linkColor: '#0f3c6c',
+            buttonBg: '#0f3c6c',
+            buttonColor: '#ffffff',
+            mentionHighlightBg: '#fff6cc',
+            mentionHighlightLink: '#0f3c6c',
             codeTheme: 'github',
-            image: defaultThemeImage
+            image: mattermostThemeImage
         },
         mattermost: {
             type: 'Mattermost',
