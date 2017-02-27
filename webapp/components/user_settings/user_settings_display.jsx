@@ -256,6 +256,8 @@ export default class UserSettingsDisplay extends React.Component {
         let nameFormatSection;
         let channelDisplayModeSection;
         let fontSection;
+
+        // eslint-disable-next-line no-unused-vars
         let languagesSection;
         let messageDisplaySection;
 
@@ -884,8 +886,10 @@ export default class UserSettingsDisplay extends React.Component {
                     {messageDisplaySection}
                     <div className='divider-dark'/>
                     {channelDisplayModeSection}
+                    {/* MODIFIED 2017-02-27: Removing language account setting section
                     <div className='divider-dark'/>
                     {languagesSection}
+                    */}
                 </div>
             </div>
         );
