@@ -488,28 +488,32 @@ export default class SidebarHeaderDropdown extends React.Component {
                     </li>
                     <li className='divider'/>
                     {integrationsLink}
-                    {this.renderCustomEmojiLink()}
-                    <li className='divider'/>
+                    {/* MODIFIED 2017-02-27: remove menu items
+                        {this.renderCustomEmojiLink()}
+                        <li className='divider'/>
+                    */}
                     {teamSettings}
                     {manageLink}
                     {sysAdminLink}
                     {teams}
-                    <li className='divider'/>
-                    {helpLink}
-                    {reportLink}
-                    <li>
-                        <a
-                            href='#'
-                            onClick={this.handleAboutModal}
-                        >
-                            <FormattedMessage
-                                id='navbar_dropdown.about'
-                                defaultMessage='About Mattermost'
-                            />
-                        </a>
-                    </li>
-                    {nativeAppDivider}
-                    {nativeAppLink}
+                    {/* MODIFIED 2017-02-27: remove menu items
+                        <li className='divider'/>
+                        {helpLink}
+                        {reportLink}
+                            <li>
+                            <a
+                                href='#'
+                                onClick={this.handleAboutModal}
+                            >
+                                <FormattedMessage
+                                    id='navbar_dropdown.about'
+                                    defaultMessage='About Mattermost'
+                                />
+                            </a>
+                            </li>
+                        {nativeAppDivider}
+                        {nativeAppLink}
+                    */}
                     <UserSettingsModal
                         show={this.state.showUserSettingsModal}
                         onModalDismissed={() => this.setState({showUserSettingsModal: false})}
