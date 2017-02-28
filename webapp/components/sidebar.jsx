@@ -829,8 +829,6 @@ export default class Sidebar extends React.Component {
                     <ul className='nav nav-pills nav-stacked'>
                         <li
                             style={{
-                                color: 'white',
-                                fontSize: '12px',
                                 padding: '0 0 0 10px'
                             }}
                         >
