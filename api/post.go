@@ -972,7 +972,7 @@ func sendNotificationEmail(c *Context, post *model.Post, user *model.User, chann
 
 	bodyPage := utils.NewHTMLTemplate("post_body", user.Locale)
 	bodyPage.Props["SiteURL"] = c.GetSiteURL()
-	bodyPage.Props["PostMessage"] = getMessageForNotification(post, userLocale)
+	// MODIFIED 2017-02-28: remove message from email
 	if team.Name != "select_team" {
 		bodyPage.Props["TeamLink"] = teamURL + "/pl/" + post.Id
 	} else {
