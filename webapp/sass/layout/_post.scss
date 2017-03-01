@@ -17,9 +17,10 @@
     }
 }
 
+// MODIFIED 2017-02-27: changing bad connection colors to match capsule theme
 .bad-connection {
-    background: #ffffac !important;
-    color: #d04444 !important;
+    background: $yellow !important;
+    color: $red !important;
 }
 
 .textarea-wrapper {

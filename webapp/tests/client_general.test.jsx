@@ -11,7 +11,8 @@ describe('Client.General', function() {
         TestHelper.initBasic(() => {
             TestHelper.basicClient().getClientConfig(
                 function(data) {
-                    assert.equal(data.SiteName, 'Mattermost');
+                    // MODIFIED 2107-02-28: changing name to capsule connect
+                    assert.equal(data.SiteName, 'Capsule Connect');
                     done();
                 },
                 function(err) {

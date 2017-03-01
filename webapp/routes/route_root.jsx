@@ -17,6 +17,7 @@ import * as UserAgent from 'utils/user_agent.jsx';
 
 import {browserHistory} from 'react-router/es6';
 
+// eslint-disable-next-line no-unused-vars
 function preLogin(nextState, replace, callback) {
     // redirect to the mobile landing page if the user hasn't seen it before
     if (window.mm_config.IosAppDownloadLink && UserAgent.isIosWeb() && !BrowserStore.hasSeenLandingPage()) {
@@ -40,6 +41,7 @@ function preLoggedIn(nextState, replace, callback) {
     callback();
 }
 
+// MODIFIED 2017-02-21: removed redirect to 'get apps' page
 export default {
     path: '/',
     component: Root,
@@ -53,7 +55,6 @@ export default {
                     [
                         {
                             path: 'login',
-                            onEnter: preLogin,
                             getComponents: (location, callback) => {
                                 System.import('components/login/login_controller.jsx').then(RouteUtils.importComponentSuccess(callback));
                             }

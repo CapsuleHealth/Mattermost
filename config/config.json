@@ -40,7 +40,7 @@
         "EnableUserTypingMessages": true
     },
     "TeamSettings": {
-        "SiteName": "Mattermost",
+        "SiteName": "Capsule Connect",
         "MaxUsersPerTeam": 50,
         "EnableTeamCreation": true,
         "EnableUserCreation": true,
@@ -229,9 +229,9 @@
         "LoginButtonText": "With SAML"
     },
     "NativeAppSettings": {
-        "AppDownloadLink": "https://about.mattermost.com/downloads/",
-        "AndroidAppDownloadLink": "https://about.mattermost.com/mattermost-android-app/",
-        "IosAppDownloadLink": "https://about.mattermost.com/mattermost-ios-app/"
+        "AppDownloadLink": "",
+        "AndroidAppDownloadLink": "",
+        "IosAppDownloadLink": ""
     },
     "ClusterSettings": {
         "Enable": false,

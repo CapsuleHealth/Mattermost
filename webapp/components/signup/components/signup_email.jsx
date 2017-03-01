@@ -16,7 +16,8 @@ import React from 'react';
 import {FormattedMessage, FormattedHTMLMessage} from 'react-intl';
 import {browserHistory, Link} from 'react-router/es6';
 
-import logoImage from 'images/logo.png';
+// MODIFIED 2017-02-17: changing logo
+import logoImage from 'images/capsule-connect-logo.svg';
 
 export default class SignupEmail extends React.Component {
     static get propTypes() {
@@ -255,13 +256,10 @@ export default class SignupEmail extends React.Component {
 
     renderEmailSignup() {
         let emailError = null;
+
+        // MODIFIED 2017-02-17: removed help text
         let emailHelpText = (
-            <span className='help-block'>
-                <FormattedMessage
-                    id='signup_user_completed.emailHelp'
-                    defaultMessage='Valid email required for sign-up'
-                />
-            </span>
+            <span className='help-block'/>
         );
         let emailDivStyle = 'form-group';
         if (this.state.emailError) {
@@ -316,11 +314,12 @@ export default class SignupEmail extends React.Component {
             emailContainerStyle = 'hidden';
         }
 
+        // MODIFIED 2017-02-18: changing h5 headers to use primary color
         return (
             <form>
                 <div className='inner__content'>
                     <div className={emailContainerStyle}>
-                        <h5><strong>
+                        <h5 className='primary-color'><strong>
                             <FormattedMessage
                                 id='signup_user_completed.whatis'
                                 defaultMessage="What's your email address?"
@@ -344,7 +343,7 @@ export default class SignupEmail extends React.Component {
                     </div>
                     {yourEmailIs}
                     <div className='margin--extra'>
-                        <h5><strong>
+                        <h5 className='primary-color'><strong>
                             <FormattedMessage
                                 id='signup_user_completed.chooseUser'
                                 defaultMessage='Choose your username'
@@ -365,7 +364,7 @@ export default class SignupEmail extends React.Component {
                         </div>
                     </div>
                     <div className='margin--extra'>
-                        <h5><strong>
+                        <h5 className='primary-color'><strong>
                             <FormattedMessage
                                 id='signup_user_completed.choosePwd'
                                 defaultMessage='Choose your password'
@@ -456,6 +455,7 @@ export default class SignupEmail extends React.Component {
             );
         }
 
+        // MODIFIED 2017-02-17: removing site name header
         return (
             <div>
                 <div className='signup-header'>
@@ -471,8 +471,8 @@ export default class SignupEmail extends React.Component {
                         <img
                             className='signup-team-logo'
                             src={logoImage}
+                            alt={global.window.mm_config.SiteName}
                         />
-                        <h1>{global.window.mm_config.SiteName}</h1>
                         <h4 className='color--light'>
                             {description}
                         </h4>
@@ -501,6 +501,13 @@ export default class SignupEmail extends React.Component {
                         {emailSignup}
                         {serverError}
                         {terms}
+                        { /* MODIFIED 2017-02-23: added 'need help' text */ }
+                        <p>
+                            <FormattedHTMLMessage
+                                id='signup_user_completed.needHelp'
+                                defaultMessage='Need help? Call or text our friendly pharmacists at 212&#8209;675&#8209;3900'
+                            />
+                        </p>
                     </div>
                 </div>
             </div>

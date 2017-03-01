@@ -5,6 +5,8 @@ import $ from 'jquery';
 import SettingItemMin from '../setting_item_min.jsx';
 import SettingItemMax from '../setting_item_max.jsx';
 import ManageLanguages from './manage_languages.jsx';
+
+// eslint-disable-next-line no-unused-vars
 import ThemeSetting from './user_settings_theme.jsx';
 
 import * as AsyncClient from 'utils/async_client.jsx';
@@ -254,6 +256,8 @@ export default class UserSettingsDisplay extends React.Component {
         let nameFormatSection;
         let channelDisplayModeSection;
         let fontSection;
+
+        // eslint-disable-next-line no-unused-vars
         let languagesSection;
         let messageDisplaySection;
 
@@ -861,6 +865,7 @@ export default class UserSettingsDisplay extends React.Component {
                             defaultMessage='Display Settings'
                         />
                     </h3>
+                    {/* MODIFIED 2017-02-27: Removing theme account setting section
                     <div className='divider-dark first'/>
                     <ThemeSetting
                         selected={this.props.activeSection === 'theme'}
@@ -868,6 +873,7 @@ export default class UserSettingsDisplay extends React.Component {
                         setRequireConfirm={this.props.setRequireConfirm}
                         setEnforceFocus={this.props.setEnforceFocus}
                     />
+                    */}
                     <div className='divider-dark'/>
                     {fontSection}
                     <div className='divider-dark'/>
@@ -880,8 +886,10 @@ export default class UserSettingsDisplay extends React.Component {
                     {messageDisplaySection}
                     <div className='divider-dark'/>
                     {channelDisplayModeSection}
+                    {/* MODIFIED 2017-02-27: Removing language account setting section
                     <div className='divider-dark'/>
                     {languagesSection}
+                    */}
                 </div>
             </div>
         );

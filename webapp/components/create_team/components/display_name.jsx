@@ -6,7 +6,7 @@ import {track} from 'actions/analytics_actions.jsx';
 import * as Utils from 'utils/utils.jsx';
 import Constants from 'utils/constants.jsx';
 
-import logoImage from 'images/logo.png';
+// MODIFIED 2017-02-22: removing logo
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -69,13 +69,10 @@ export default class TeamSignupDisplayNamePage extends React.Component {
             nameDivClass += ' has-error';
         }
 
+        // MODIFIED 2017-02-22: removing logo
         return (
             <div>
                 <form>
-                    <img
-                        className='signup-team-logo'
-                        src={logoImage}
-                    />
                     <h2>
                         <FormattedMessage
                             id='create_team.display_name.teamName'

@@ -16,7 +16,9 @@ import {Link} from 'react-router/es6';
 import {FormattedMessage} from 'react-intl';
 
 import React from 'react';
-import logoImage from 'images/logo.png';
+
+// MODIFIED 2017-02-17: changing logo
+import logoImage from 'images/capsule-connect-logo.svg';
 
 export default class SelectTeam extends React.Component {
 
@@ -210,6 +212,8 @@ export default class SelectTeam extends React.Component {
                 </a>
             );
         }
+
+        // MODIFIED 2017-02-17: removed siteName header
         return (
             <div>
                 <ErrorBar/>
@@ -222,7 +226,6 @@ export default class SelectTeam extends React.Component {
                             className='signup-team-logo'
                             src={logoImage}
                         />
-                        <h1>{global.window.mm_config.SiteName}</h1>
                         <h4 className='color--light'>
                             {description}
                         </h4>

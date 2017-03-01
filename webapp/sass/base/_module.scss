@@ -1,3 +1,9 @@
 // Only for combining all the files in this folder
 @import 'typography';
 @import 'structure';
+
+// MODIFIED 2017-02-18: adding primary color class
+.primary-color {
+    color: $primary-color;
+}
+

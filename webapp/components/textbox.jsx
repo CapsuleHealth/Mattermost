@@ -275,6 +275,7 @@ export default class Textbox extends React.Component {
                 <div className='help__text'>
                     {helpText}
                     {previewLink}
+                    {/* MODIFIED 2017-02-27: remove help link
                     <a
                         target='_blank'
                         rel='noopener noreferrer'
@@ -286,6 +287,7 @@ export default class Textbox extends React.Component {
                             defaultMessage='Help'
                         />
                     </a>
+                    */}
                 </div>
             </div>
         );

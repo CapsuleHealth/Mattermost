@@ -14,6 +14,9 @@ import {browserHistory} from 'react-router/es6';
 
 import AppIcons from 'images/appIcons.png';
 
+// MODIFIED 2017-02-23: adding logo
+import logoImage from 'images/capsule-connect-logo.svg';
+
 const NUM_SCREENS = 3;
 
 import React from 'react';
@@ -75,8 +78,18 @@ export default class TutorialIntroScreens extends React.Component {
     createScreenOne() {
         const circles = this.createCircles();
 
+        // MODIFIED 2017-02-23: adding welcome header
+        // MODIFIED 2017-02-23: adding logo
         return (
             <div>
+                <FormattedHTMLMessage
+                    id='tutorial_intro.screenOne.welcome'
+                    defaultMessage='<h3>Welcome to</h3>'
+                />
+                <img
+                    className='tutorial-team-logo'
+                    src={logoImage}
+                />
                 <FormattedHTMLMessage
                     id='tutorial_intro.screenOne'
                     defaultMessage='<h3>Welcome to:</h3>
@@ -212,6 +225,7 @@ export default class TutorialIntroScreens extends React.Component {
             );
         }
 
+        // eslint-disable-next-line no-unused-vars
         let townSquareDisplayName = Constants.DEFAULT_CHANNEL_UI_NAME;
         if (this.props.townSquare) {
             townSquareDisplayName = this.props.townSquare.display_name;
@@ -227,13 +241,7 @@ export default class TutorialIntroScreens extends React.Component {
                 </h3>
                 {inviteText}
                 {supportInfo}
-                <FormattedMessage
-                    id='tutorial_intro.end'
-                    defaultMessage='Click “Next” to enter {channel}. This is the first channel teammates see when they sign up. Use it for posting updates everyone needs to know.'
-                    values={{
-                        channel: townSquareDisplayName
-                    }}
-                />
+                { /* MODIFIED 2017-02-23: removed tutorial intro end */}
                 {circles}
             </div>
         );

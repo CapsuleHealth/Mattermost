@@ -1,11 +1,13 @@
 @charset 'UTF-8';
 
+// MODIFIED 2017-02-18: changing footer background to white text on primary
+// color background
 .footer-pane {
-    background: $bg--gray;
+    background: $primary-color;
     padding-bottom: 1em;
 
     .footer-link {
-        padding: 0 1.5em;
+        padding: 1.5em 1.5em 1em;
 
         &.copyright {
             color: $dark-gray;
@@ -19,12 +21,19 @@
         padding: 1.5em 0 1em;
         text-transform: uppercase;
     }
+
+    a, a:hover {
+        color: #fff
+    }
+
 }
+
+// MODIFIED 2017-02-17: Changing footer height
 
 .footer,
 .footer-pane,
 .footer-push {
-    height: 89px;
+    height: 60px;
 }
 
 

@@ -10,6 +10,9 @@ import {browserHistory, Link} from 'react-router/es6';
 
 import React from 'react';
 
+// MODIFIED 2017-02-17: adding logo
+import logoImage from 'images/capsule-connect-logo.svg';
+
 export default class CreateTeamController extends React.Component {
     constructor(props) {
         super(props);
@@ -59,6 +62,8 @@ export default class CreateTeamController extends React.Component {
             }
         }
 
+        // MODIFIED 2017-02-22: removed SiteName header
+        // MODIFIED 2017-02-22: adding logo
         return (
             <div>
                 <ErrorBar/>
@@ -72,7 +77,10 @@ export default class CreateTeamController extends React.Component {
                 </div>
                 <div className='col-sm-12'>
                     <div className='signup-team__container'>
-                        <h1>{global.window.mm_config.SiteName}</h1>
+                        <img
+                            className='signup-team-logo'
+                            src={logoImage}
+                        />
                         <h4 className='color--light'>
                             {description}
                         </h4>

@@ -20,7 +20,9 @@ import {FormattedMessage} from 'react-intl';
 import {browserHistory, Link} from 'react-router/es6';
 
 import React from 'react';
-import logoImage from 'images/logo.png';
+
+// MODIFIED 2017-02-17: changing logo
+import logoImage from 'images/capsule-connect-logo.svg';
 
 export default class LoginController extends React.Component {
     static get propTypes() {
@@ -585,6 +587,7 @@ export default class LoginController extends React.Component {
             );
         }
 
+        // MODIFIED 2017-02-17: removing site name header
         return (
             <div>
                 <ErrorBar/>
@@ -596,9 +599,9 @@ export default class LoginController extends React.Component {
                         <img
                             className='signup-team-logo'
                             src={logoImage}
+                            alt={global.window.mm_config.SiteName}
                         />
                         <div className='signup__content'>
-                            <h1>{global.window.mm_config.SiteName}</h1>
                             <h4 className='color--light'>
                                 {description}
                             </h4>
