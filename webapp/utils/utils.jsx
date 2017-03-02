@@ -98,6 +98,7 @@ export function notifyMe(title, body, channel, teamId, duration, silent) {
     if (Notification.permission === 'granted' || (Notification.permission === 'default' && !requestedNotificationPermission)) {
         requestedNotificationPermission = true;
 
+        // MODIFIED 2017-03-02: changing default channel to capsule
         Notification.requestPermission((permission) => {
             if (permission === 'granted') {
                 try {
@@ -109,9 +110,9 @@ export function notifyMe(title, body, channel, teamId, duration, silent) {
                         } else if (channel) {
                             browserHistory.push(TeamStore.getTeamUrl(teamId) + '/channels/' + channel.name);
                         } else if (teamId) {
-                            browserHistory.push(TeamStore.getTeamUrl(teamId) + '/channels/town-square');
+                            browserHistory.push(TeamStore.getTeamUrl(teamId) + '/channels/capsule');
                         } else {
-                            browserHistory.push(TeamStore.getCurrentTeamUrl() + '/channels/town-square');
+                            browserHistory.push(TeamStore.getCurrentTeamUrl() + '/channels/capsule');
                         }
                     };
 

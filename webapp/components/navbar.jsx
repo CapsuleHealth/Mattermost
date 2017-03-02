@@ -121,8 +121,9 @@ export default class Navbar extends React.Component {
                     ChannelActions.unmarkFavorite(channelId);
                 }
 
-                const townsquare = ChannelStore.getByName('town-square');
-                browserHistory.push(TeamStore.getCurrentTeamRelativeUrl() + '/channels/' + townsquare.name);
+                // MODIFIED 2017-03-02: changing default channel to capsule
+                const capsule = ChannelStore.getByName('capsule');
+                browserHistory.push(TeamStore.getCurrentTeamRelativeUrl() + '/channels/' + capsule.name);
             },
             (err) => {
                 AsyncClient.dispatchError(err, 'handleLeave');
@@ -536,10 +537,11 @@ export default class Navbar extends React.Component {
             );
         }
 
+		// MODIFIED 2017-03-02: changing default channel to capsule
         return (
             <div className='navbar-brand'>
                 <Link
-                    to={TeamStore.getCurrentTeamUrl() + '/channels/town-square'}
+                    to={TeamStore.getCurrentTeamUrl() + '/channels/capsule'}
                     className='heading'
                 >
                     {channelTitle}

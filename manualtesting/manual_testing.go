@@ -77,7 +77,8 @@ func manualTest(c *api.Context, w http.ResponseWriter, r *http.Request) {
 
 			createdTeam := result.Data.(*model.Team)
 
-			channel := &model.Channel{DisplayName: "Town Square", Name: "town-square", Type: model.CHANNEL_OPEN, TeamId: createdTeam.Id}
+			// MODIFIED 2017-03-02: changing default channel to capsule
+			channel := &model.Channel{DisplayName: "Capsule", Name: "capsule", Type: model.CHANNEL_OPEN, TeamId: createdTeam.Id}
 			if _, err := api.CreateChannel(c, channel, false); err != nil {
 				c.Err = err
 				return
@@ -120,7 +121,7 @@ func manualTest(c *api.Context, w http.ResponseWriter, r *http.Request) {
 			HttpOnly: true,
 		}
 		http.SetCookie(w, sessionCookie)
-		http.Redirect(w, r, "/channels/town-square", http.StatusTemporaryRedirect)
+		http.Redirect(w, r, "/channels/capsule", http.StatusTemporaryRedirect)
 	}
 
 	// Setup test environment

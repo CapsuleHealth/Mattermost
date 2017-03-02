@@ -5578,5 +5578,21 @@
   {
     "id": "web.watcher_fail.error",
     "translation": "Failed to add directory to watcher %v"
+  },
+  {
+    "id": "api.channel.create_default_channels.capsule",
+    "translation": "Capsule"
+  },
+  {
+    "id": "api.channel.create_default_channels.capsule.header",
+    "translation": "Our pharmacy experience team actively monitors Capsule Connect Mon-Fri: 8am-10pm, Sat-Sun: 10am-6pm to assist with refills, PAs, or any other pharmacy needs."
+  },
+  {
+    "id": "api.channel.create_default_channels.general",
+    "translation": "General"
+  },
+  {
+    "id": "api.channel.create_default_channels.general.header",
+    "translation": "Use this channel to communicate with other members of your team."
   }
 ]

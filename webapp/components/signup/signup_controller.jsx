@@ -68,6 +68,7 @@ export default class SignupController extends React.Component {
 
             const userLoggedIn = UserStore.getCurrentUser() != null;
 
+            // MODIFIED 2017-03-02: changing default channel to capsule
             if ((inviteId || hash) && userLoggedIn) {
                 Client.addUserToTeamFromInvite(
                     data,
@@ -76,7 +77,7 @@ export default class SignupController extends React.Component {
                     (team) => {
                         GlobalActions.emitInitialLoad(
                             () => {
-                                browserHistory.push('/' + team.name + '/channels/town-square');
+                                browserHistory.push('/' + team.name + '/channels/capsule');
                             }
                         );
                     },

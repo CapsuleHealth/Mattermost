@@ -18,11 +18,12 @@ export default class BackstageNavbar extends React.Component {
             return null;
         }
 
+		// MODIFIED 2017-03-02: changing default channel to capsule
         return (
             <div className='backstage-navbar'>
                 <Link
                     className='backstage-navbar__back'
-                    to={`/${this.props.team.name}/channels/town-square`}
+                    to={`/${this.props.team.name}/channels/capsule`}
                 >
                     <i className='fa fa-angle-left'/>
                     <span>

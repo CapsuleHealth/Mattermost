@@ -513,8 +513,9 @@ func cmdLeaveChannel() {
 			os.Exit(1)
 		}
 
+		// MODIFIED 2017-03-02: changing default channel to capsule
 		if flagChannelName == model.DEFAULT_CHANNEL {
-			fmt.Fprintln(os.Stderr, "flag has invalid argument: -channel_name (cannot leave town-square)")
+			fmt.Fprintln(os.Stderr, "flag has invalid argument: -channel_name (cannot leave capsule)")
 			os.Exit(1)
 		}
 

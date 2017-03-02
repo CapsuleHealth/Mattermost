@@ -33,10 +33,11 @@ export default class RemovedFromChannelModal extends React.Component {
             BrowserStore.removeItem('channel-removed-state');
         }
 
-        var townSquare = ChannelStore.getByName('town-square');
+		// MODIFIED 2017-03-02: changing default channel to capsule
+        var capsule = ChannelStore.getByName('capsule');
         setTimeout(
             () => {
-                browserHistory.push(TeamStore.getCurrentTeamRelativeUrl() + '/channels/' + townSquare.name);
+                browserHistory.push(TeamStore.getCurrentTeamRelativeUrl() + '/channels/' + capsule.name);
             },
         1);
 

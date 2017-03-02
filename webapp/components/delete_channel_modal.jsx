@@ -30,7 +30,8 @@ export default class DeleteChannelModal extends React.Component {
             return;
         }
 
-        browserHistory.push(TeamStore.getCurrentTeamRelativeUrl() + '/channels/town-square');
+        // MODIFIED 2017-03-02: changing default channel to capsule
+        browserHistory.push(TeamStore.getCurrentTeamRelativeUrl() + '/channels/capsule');
         Client.deleteChannel(
             this.props.channel.id,
             () => {
