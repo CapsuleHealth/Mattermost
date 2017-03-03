@@ -102,6 +102,12 @@ export default {
                                 System.import('components/do_verify_email.jsx').then(RouteUtils.importComponentSuccess(callback));
                             }
                         },
+                        {
+                            path: 'about',
+                            getComponents: (location, callback) => {
+                                System.import('components/about_capsule_connect.jsx').then(RouteUtils.importComponentSuccess(callback));
+                            }
+                        },
                         helpRoute
                     ]
                 )
