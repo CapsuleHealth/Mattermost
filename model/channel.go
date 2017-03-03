@@ -9,11 +9,12 @@ import (
 	"unicode/utf8"
 )
 
+// MODIFIED 2017-03-02: changing default channel to capsule
 const (
 	CHANNEL_OPEN                   = "O"
 	CHANNEL_PRIVATE                = "P"
 	CHANNEL_DIRECT                 = "D"
-	DEFAULT_CHANNEL                = "town-square"
+	DEFAULT_CHANNEL                = "capsule"
 	CHANNEL_DISPLAY_NAME_MAX_RUNES = 64
 	CHANNEL_NAME_MAX_LENGTH        = 64
 	CHANNEL_HEADER_MAX_RUNES       = 1024

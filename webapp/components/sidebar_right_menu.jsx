@@ -360,6 +360,7 @@ export default class SidebarRightMenu extends React.Component {
             );
         }
 
+        // MODIFIED 2017-03-02: changing default channel to capsule
         return (
             <div
                 className='sidebar--menu'
@@ -368,7 +369,7 @@ export default class SidebarRightMenu extends React.Component {
                 <div className='team__header theme'>
                     <Link
                         className='team__name'
-                        to='/channels/town-square'
+                        to='/channels/capsule'
                     >
                         {teamDisplayName}
                     </Link>

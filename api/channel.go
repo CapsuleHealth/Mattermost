@@ -179,19 +179,20 @@ func CreateDirectChannel(userId string, otherUserId string) (*model.Channel, *mo
 }
 
 func CreateDefaultChannels(c *Context, teamId string) ([]*model.Channel, *model.AppError) {
-	townSquare := &model.Channel{DisplayName: c.T("api.channel.create_default_channels.town_square"), Name: "town-square", Type: model.CHANNEL_OPEN, TeamId: teamId}
+	// MODIFIED 2017-03-02: changing default channels to capsule and general
+	capsule := &model.Channel{DisplayName: c.T("api.channel.create_default_channels.capsule"), Header: c.T("api.channel.create_default_channels.capsule.header"), Name: "capsule", Type: model.CHANNEL_OPEN, TeamId: teamId}
 
-	if _, err := CreateChannel(c, townSquare, false); err != nil {
+	if _, err := CreateChannel(c, capsule, false); err != nil {
 		return nil, err
 	}
 
-	offTopic := &model.Channel{DisplayName: c.T("api.channel.create_default_channels.off_topic"), Name: "off-topic", Type: model.CHANNEL_OPEN, TeamId: teamId}
+	general := &model.Channel{DisplayName: c.T("api.channel.create_default_channels.general"), Header: c.T("api.channel.create_default_channels.general.header"), Name: "general", Type: model.CHANNEL_OPEN, TeamId: teamId}
 
-	if _, err := CreateChannel(c, offTopic, false); err != nil {
+	if _, err := CreateChannel(c, general, false); err != nil {
 		return nil, err
 	}
 
-	channels := []*model.Channel{townSquare, offTopic}
+	channels := []*model.Channel{capsule, general}
 	return channels, nil
 }
 
@@ -658,7 +659,7 @@ func JoinDefaultChannels(teamId string, user *model.User, channelRole string) *m
 		T:      utils.TfuncWithFallback(user.Locale),
 	}
 
-	if result := <-Srv.Store.Channel().GetByName(teamId, "town-square", true); result.Err != nil {
+	if result := <-Srv.Store.Channel().GetByName(teamId, "capsule", true); result.Err != nil {
 		err = result.Err
 	} else {
 		cm := &model.ChannelMember{ChannelId: result.Data.(*model.Channel).Id, UserId: user.Id,
@@ -682,7 +683,7 @@ func JoinDefaultChannels(teamId string, user *model.User, channelRole string) *m
 		}
 	}
 
-	if result := <-Srv.Store.Channel().GetByName(teamId, "off-topic", true); result.Err != nil {
+	if result := <-Srv.Store.Channel().GetByName(teamId, "general", true); result.Err != nil {
 		err = result.Err
 	} else {
 		cm := &model.ChannelMember{ChannelId: result.Data.(*model.Channel).Id, UserId: user.Id,

@@ -961,7 +961,7 @@ func TestGetMyChannelMembers(t *testing.T) {
 	} else {
 		members := result.Data.(*model.ChannelMembers)
 
-		// town-square, off-topic, basic test channel, channel1, channel2
+		// capsule, general, basic test channel, channel1, channel2
 		if len(*members) != 5 {
 			t.Fatal("wrong number of members", len(*members))
 		}
@@ -1470,9 +1470,10 @@ func TestRemoveChannelMember(t *testing.T) {
 		t.Fatal("Should have errored, channel deleted")
 	}
 
-	townSquare := Client.Must(Client.GetChannelByName("town-square")).Data.(*model.Channel)
+	// MODIFIED 2017-03-02: changing default channel to capsule
+	capsule := Client.Must(Client.GetChannelByName("capsule")).Data.(*model.Channel)
 
-	if _, err := Client.RemoveChannelMember(townSquare.Id, userStd.Id); err == nil {
+	if _, err := Client.RemoveChannelMember(capsule.Id, userStd.Id); err == nil {
 		t.Fatal("should have errored, channel is default")
 	}
 }

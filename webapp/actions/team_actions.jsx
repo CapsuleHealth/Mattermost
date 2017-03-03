@@ -26,7 +26,8 @@ export function createTeam(team, onSuccess, onError) {
                 member: {team_id: rteam.id, user_id: UserStore.getCurrentId(), roles: 'team_admin team_user'}
             });
 
-            browserHistory.push('/' + rteam.name + '/channels/town-square');
+            // MODIFIED 2017-03-02: changing default channel to capsule
+            browserHistory.push('/' + rteam.name + '/channels/capsule');
 
             if (onSuccess) {
                 onSuccess(rteam);
@@ -44,7 +45,8 @@ export function updateTeam(team, onSuccess, onError) {
                 team: rteam
             });
 
-            browserHistory.push('/' + rteam.name + '/channels/town-square');
+            // MODIFIED 2017-03-02: changing default channel to capsule
+            browserHistory.push('/' + rteam.name + '/channels/capsule');
 
             if (onSuccess) {
                 onSuccess(rteam);

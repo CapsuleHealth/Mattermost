@@ -139,8 +139,9 @@ export default class ChannelHeader extends React.Component {
                     ChannelActions.unmarkFavorite(channelId);
                 }
 
-                const townsquare = ChannelStore.getByName('town-square');
-                browserHistory.push(TeamStore.getCurrentTeamRelativeUrl() + '/channels/' + townsquare.name);
+                // MODIFIED 2017-03-02: changing default channel to capsule
+                const capsule = ChannelStore.getByName('capsule');
+                browserHistory.push(TeamStore.getCurrentTeamRelativeUrl() + '/channels/' + capsule.name);
             },
             (err) => {
                 AsyncClient.dispatchError(err, 'handleLeave');

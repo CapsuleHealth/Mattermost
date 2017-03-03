@@ -9,6 +9,7 @@ import Constants from 'utils/constants.jsx';
 import $ from 'jquery';
 import React from 'react';
 
+// MODIFIED 2017-03-02: changing default channels to capsule and general
 export default class TutorialView extends React.Component {
     constructor(props) {
         super(props);
@@ -16,7 +17,7 @@ export default class TutorialView extends React.Component {
         this.handleChannelChange = this.handleChannelChange.bind(this);
 
         this.state = {
-            townSquare: ChannelStore.getByName(Constants.DEFAULT_CHANNEL)
+            capsule: ChannelStore.getByName(Constants.DEFAULT_CHANNEL)
         };
     }
     componentDidMount() {
@@ -41,7 +42,7 @@ export default class TutorialView extends React.Component {
                 className='app__content'
             >
                 <TutorialIntroScreens
-                    townSquare={this.state.townSquare}
+                    capsule={this.state.capsule}
                 />
             </div>
         );

@@ -21,11 +21,12 @@ const NUM_SCREENS = 3;
 
 import React from 'react';
 
+// MODIFIED 2017-03-02: changing default channels to capsule and general
 export default class TutorialIntroScreens extends React.Component {
     static get propTypes() {
         return {
-            townSquare: React.PropTypes.object,
-            offTopic: React.PropTypes.object
+            capsule: React.PropTypes.object,
+            general: React.PropTypes.object
         };
     }
     constructor(props) {
@@ -43,7 +44,7 @@ export default class TutorialIntroScreens extends React.Component {
             return;
         }
 
-        browserHistory.push(TeamStore.getCurrentTeamUrl() + '/channels/town-square');
+        browserHistory.push(TeamStore.getCurrentTeamUrl() + '/channels/capsule');
 
         const step = PreferenceStore.getInt(Preferences.TUTORIAL_STEP, UserStore.getCurrentId(), 0);
 
@@ -62,7 +63,7 @@ export default class TutorialIntroScreens extends React.Component {
             '999'
         );
 
-        browserHistory.push(TeamStore.getCurrentTeamUrl() + '/channels/town-square');
+        browserHistory.push(TeamStore.getCurrentTeamUrl() + '/channels/capsule');
     }
     createScreen() {
         switch (this.state.currentScreen) {
@@ -225,11 +226,7 @@ export default class TutorialIntroScreens extends React.Component {
             );
         }
 
-        // eslint-disable-next-line no-unused-vars
-        let townSquareDisplayName = Constants.DEFAULT_CHANNEL_UI_NAME;
-        if (this.props.townSquare) {
-            townSquareDisplayName = this.props.townSquare.display_name;
-        }
+        // MODIFIED 2017-03-02: removing town square display name
 
         return (
             <div>

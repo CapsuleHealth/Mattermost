@@ -216,8 +216,9 @@ func TestCliRemoveChannel(t *testing.T) {
 	// 	t.Fatal(err1)
 	// }
 
-	// cannot leave town-square
-	cmd1a := exec.Command("bash", "-c", "go run ../cmd/platform/*.go channel remove "+th.BasicTeam.Name+":town-square "+th.BasicUser2.Email)
+	// MODIFIED 2017-03-02: changing default channel to capsule
+	// cannot leave capsule
+	cmd1a := exec.Command("bash", "-c", "go run ../cmd/platform/*.go channel remove "+th.BasicTeam.Name+":capsule "+th.BasicUser2.Email)
 	output1a, err1a := cmd1a.CombinedOutput()
 	if err1a == nil {
 		t.Log(string(output1a))
@@ -259,7 +260,7 @@ func TestCliListChannels(t *testing.T) {
 	// 	t.Fatal(err)
 	// }
 
-	// if !strings.Contains(string(output), "town-square") {
+	// if !strings.Contains(string(output), "capsule") {
 	// 	t.Fatal("should have channels")
 	// }
 

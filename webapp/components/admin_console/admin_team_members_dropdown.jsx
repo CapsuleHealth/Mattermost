@@ -188,7 +188,8 @@ export default class AdminTeamMembersDropdown extends React.Component {
         const teamUrl = TeamStore.getCurrentTeamUrl();
         if (teamUrl) {
             // the channel is added to the URL cause endless loading not being fully fixed
-            window.location.href = teamUrl + '/channels/town-square';
+            // MODIFIED 2017-03-02: changing default channel to capsule
+            window.location.href = teamUrl + '/channels/capsule';
         } else {
             window.location.href = '/';
         }

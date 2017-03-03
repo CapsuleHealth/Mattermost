@@ -31,9 +31,9 @@ class AtMentionSuggestion extends Suggestion {
             description = (
                 <FormattedMessage
                     id='suggestion.mention.all'
-                    defaultMessage='Notifies everyone in the channel, use in {townsquare} to notify the whole team'
+                    defaultMessage='Notifies everyone in the channel, use in {capsule} to notify the whole team'
                     values={{
-                        townsquare: ChannelStore.getByName('town-square').display_name
+                        capsule: ChannelStore.getByName('capsule').display_name
                     }}
                 />
             );

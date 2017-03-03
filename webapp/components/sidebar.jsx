@@ -111,6 +111,7 @@ export default class Sidebar extends React.Component {
         const tutorialStep = PreferenceStore.getInt(Preferences.TUTORIAL_STEP, UserStore.getCurrentId(), 999);
         const channelList = ChannelUtils.buildDisplayableChannelList(Object.assign([], ChannelStore.getAll()));
 
+		// MODIFIED 2017-03-02: changing default channels to capsule and general
         return {
             activeId: currentChannelId,
             members,
@@ -120,8 +121,8 @@ export default class Sidebar extends React.Component {
             showTutorialTip: tutorialStep === TutorialSteps.CHANNEL_POPOVER,
             currentTeam: TeamStore.getCurrent(),
             currentUser: UserStore.getCurrentUser(),
-            townSquare: ChannelStore.getByName(Constants.DEFAULT_CHANNEL),
-            offTopic: ChannelStore.getByName(Constants.OFFTOPIC_CHANNEL)
+            capsule: ChannelStore.getByName(Constants.DEFAULT_CHANNEL),
+            general: ChannelStore.getByName(Constants.OFFTOPIC_CHANNEL)
         };
     }
 
@@ -355,7 +356,9 @@ export default class Sidebar extends React.Component {
 
         if (channel.id === this.state.activeId) {
             this.closedDirectChannel = true;
-            browserHistory.push('/' + this.state.currentTeam.name + '/channels/town-square');
+
+            // MODIFIED 2017-03-02: changing default channel to capsule
+            browserHistory.push('/' + this.state.currentTeam.name + '/channels/capsule');
         }
     }
 
@@ -395,14 +398,14 @@ export default class Sidebar extends React.Component {
     createTutorialTip() {
         const screens = [];
 
-        let townSquareDisplayName = Constants.DEFAULT_CHANNEL_UI_NAME;
-        if (this.state.townSquare) {
-            townSquareDisplayName = this.state.townSquare.display_name;
+        let capsuleDisplayName = Constants.DEFAULT_CHANNEL_UI_NAME;
+        if (this.state.capsule) {
+            capsuleDisplayName = this.state.capsule.display_name;
         }
 
-        let offTopicDisplayName = Constants.OFFTOPIC_CHANNEL_UI_NAME;
-        if (this.state.offTopic) {
-            offTopicDisplayName = this.state.offTopic.display_name;
+        let generalDisplayName = Constants.OFFTOPIC_CHANNEL_UI_NAME;
+        if (this.state.general) {
+            generalDisplayName = this.state.general.display_name;
         }
 
         screens.push(
@@ -418,13 +421,13 @@ export default class Sidebar extends React.Component {
             <div>
                 <FormattedHTMLMessage
                     id='sidebar.tutorialScreen2'
-                    defaultMessage='<h4>"{townsquare}" and "{offtopic}" channels</h4>
+                    defaultMessage='<h4>"{capsule}" and "{general}" channels</h4>
                     <p>Here are two public channels to start:</p>
-                    <p><strong>{townsquare}</strong> is a place for team-wide communication. Everyone in your team is a member of this channel.</p>
-                    <p><strong>{offtopic}</strong> is a place for fun and humor outside of work-related channels. You and your team can decide what other channels to create.</p>'
+                    <p><strong>{capsule}</strong> is monitored Mon-Fri: 8am-10pm, Sat-Sun: 10am-6pm to assist with refills, PAs, or any other pharmacy needs.</p>
+                    <p><strong>{general}</strong> is to communicate with other members of your team. You and your team can decide what other channels to create.</p>'
                     values={{
-                        townsquare: townSquareDisplayName,
-                        offtopic: offTopicDisplayName
+                        capsule: capsuleDisplayName,
+                        general: generalDisplayName
                     }}
                 />
             </div>

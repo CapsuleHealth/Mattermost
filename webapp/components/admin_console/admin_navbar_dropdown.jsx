@@ -68,11 +68,12 @@ export default class AdminNavbarDropdown extends React.Component {
                 teamA.display_name.localeCompare(teamB.display_name)
             );
 
+            // MODIFIED 2017-03-02: changing default channel to capsule
             for (const team of teamsArray) {
                 teams.push(
                     <li key={'team_' + team.name}>
                         <Link
-                            to={'/' + team.name + '/channels/town-square'}
+                            to={'/' + team.name + '/channels/capsule'}
                         >
                             <FormattedMessage
                                 id='navbar_dropdown.switchTo'

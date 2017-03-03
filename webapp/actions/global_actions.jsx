@@ -185,7 +185,8 @@ export function emitPostFocusEvent(postId, onSuccess) {
             if (channel) {
                 link += channel.name;
             } else {
-                link += 'town-square';
+                // MODIFIED 2017-03-02: changing default channel to capsule
+                link += 'capsule';
             }
 
             browserHistory.push('/error?message=' + encodeURIComponent(Utils.localizeMessage('permalink.error.access', 'Permalink belongs to a deleted message or to a channel to which you do not have access.')) + '&link=' + encodeURIComponent(link));
@@ -575,6 +576,7 @@ export function redirectUserToDefaultTeam() {
         }
     }
 
+    // MODIFIED 2017-03-02: changing default channel to capsule
     if (teams[teamId]) {
         const channelId = BrowserStore.getGlobalItem(teamId);
         const channel = ChannelStore.getChannelById(channelId);
@@ -588,11 +590,11 @@ export function redirectUserToDefaultTeam() {
                     redirect(teams[teamId].name, data.channel.name);
                 },
                 () => {
-                    redirect(teams[teamId].name, 'town-square');
+                    redirect(teams[teamId].name, 'capsule');
                 }
             );
         } else {
-            redirect(teams[teamId].name, 'town-square');
+            redirect(teams[teamId].name, 'capsule');
         }
     } else {
         browserHistory.push('/select_team');

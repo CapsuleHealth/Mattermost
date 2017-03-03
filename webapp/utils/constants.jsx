@@ -227,6 +227,7 @@ export const TutorialSteps = {
 
 // MODIFIED 2017-02-27: updating default theme
 // MODIFIED 2017-02-27: changed system name and icon
+// MODIFIED 2017-03-02: changing default channels to capsule and general
 export const Constants = {
     Preferences,
     SocketEvents,
@@ -325,10 +326,10 @@ export const Constants = {
     MOBILE_SCREEN_WIDTH: 768,
     SCROLL_DELAY: 2000,
     SCROLL_PAGE_FRACTION: 3,
-    DEFAULT_CHANNEL: 'town-square',
-    DEFAULT_CHANNEL_UI_NAME: 'Town Square',
-    OFFTOPIC_CHANNEL: 'off-topic',
-    OFFTOPIC_CHANNEL_UI_NAME: 'Off-Topic',
+    DEFAULT_CHANNEL: 'capsule',
+    DEFAULT_CHANNEL_UI_NAME: 'Capsule',
+    OFFTOPIC_CHANNEL: 'general',
+    OFFTOPIC_CHANNEL_UI_NAME: 'General',
     GITLAB_SERVICE: 'gitlab',
     GOOGLE_SERVICE: 'google',
     OFFICE365_SERVICE: 'office365',

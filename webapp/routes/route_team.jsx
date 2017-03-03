@@ -33,6 +33,7 @@ function doChannelChange(state, replace, callback) {
     } else {
         channel = ChannelStore.getByName(state.params.channel);
 
+        // MODIFIED 2017-03-02: changing default channel to capsule
         if (!channel) {
             Client.joinChannelByName(
                 state.params.channel,
@@ -47,7 +48,7 @@ function doChannelChange(state, replace, callback) {
                 },
                 () => {
                     if (state.params.team) {
-                        replace('/' + state.params.team + '/channels/town-square');
+                        replace('/' + state.params.team + '/channels/capsule');
                     } else {
                         replace('/');
                     }
@@ -134,7 +135,8 @@ function selectLastChannel(nextState, replace, callback) {
     const channelId = BrowserStore.getGlobalItem(team.id);
     const channel = ChannelStore.getChannelById(channelId);
 
-    let channelName = 'town-square';
+    // MODIFIED 2017-03-02: changing default channel to capsule
+    let channelName = 'capsule';
     if (channel) {
         channelName = channel.name;
     }
