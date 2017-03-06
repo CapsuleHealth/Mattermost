@@ -148,6 +148,8 @@ export default class SidebarRightMenu extends React.Component {
         let teamSettingsLink;
         let manageLink;
         let consoleLink;
+
+        // eslint-disable-next-line no-unused-vars
         let joinAnotherTeamLink;
         let isAdmin = false;
         let isSystemAdmin = false;
@@ -296,6 +298,7 @@ export default class SidebarRightMenu extends React.Component {
             teamDisplayName = this.props.teamDisplayName;
         }
 
+        // eslint-disable-next-line no-unused-vars
         let helpLink = null;
         if (global.window.mm_config.HelpLink) {
             helpLink = (
@@ -315,6 +318,7 @@ export default class SidebarRightMenu extends React.Component {
             );
         }
 
+        // eslint-disable-next-line no-unused-vars
         let reportLink = null;
         if (global.window.mm_config.ReportAProblemLink) {
             reportLink = (
@@ -341,6 +345,7 @@ export default class SidebarRightMenu extends React.Component {
             this.openRightSidebar();
         }
 
+        // eslint-disable-next-line no-unused-vars
         let nativeAppLink = null;
         if (global.window.mm_config.AppDownloadLink && !UserAgent.isMobileApp()) {
             nativeAppLink = (
@@ -417,11 +422,14 @@ export default class SidebarRightMenu extends React.Component {
                         </li>
                         {inviteLink}
                         {teamLink}
-                        {joinAnotherTeamLink}
+                        {/* MODIFIED 2017-03-06: removed join another team link
+                            joinAnotherTeamLink
+                        */}
                         <li className='divider'/>
                         {teamSettingsLink}
                         {manageLink}
                         {consoleLink}
+                        {/* MODIFIED 2017-03-067: removed help, report a problem, about, and app links
                         <li className='divider'/>
                         {helpLink}
                         {reportLink}
@@ -439,6 +447,7 @@ export default class SidebarRightMenu extends React.Component {
                         </li>
                         <li className='divider'/>
                         {nativeAppLink}
+                        */}
                         <li className='divider'/>
                         <li>
                             <a
