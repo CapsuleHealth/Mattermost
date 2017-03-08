@@ -39,3 +39,36 @@ body {
 .font-weight--normal {
     font-weight: normal;
 }
+
+// MODIFIED 2017-03-08: Adding circular pro fonts
+@font-face {
+    font-family: 'Circular Pro';
+    font-weight: normal;
+    font-style: normal;
+    src:url(https://brand.capsulerx.com/fonts/circular/lineto-circular-pro-book.eot);
+    src:url(https://brand.capsulerx.com/fonts/circular/lineto-circular-pro-book.eot?#iefix) format("embedded-opentype"),
+    url(https://brand.capsulerx.com/fonts/circular/lineto-circular-pro-book.woff) format("woff")
+}
+
+@font-face {
+    font-family: 'Circular Pro';
+    font-weight: 600;
+    font-style: normal;
+    src:url(https://brand.capsulerx.com/fonts/circular/lineto-circular-pro-bold.eot);
+    src:url(https://brand.capsulerx.com/fonts/circular/lineto-circular-pro-bold.eot?#iefix) format("embedded-opentype"),
+    url(https://brand.capsulerx.com/fonts/circular/lineto-circular-pro-bold.woff) format("woff")
+}
+
+@font-face {
+    font-family: 'Circular Pro';
+    font-weight: normal;
+    font-style: italic;
+    src:url(https://brand.capsulerx.com/fonts/circular/lineto-circular-pro-bookItalic.eot);
+    src:url(https://brand.capsulerx.com/fonts/circular/lineto-circular-pro-bookItalic.eot?#iefix) format("embedded-opentype"),
+    url(https://brand.capsulerx.com/fonts/circular/lineto-circular-pro-bookItalic.woff) format("woff")
+}
+
+.app__body.font--circular_pro {
+    font-family: 'Circular Pro', 'sans-serif';
+    font-size: 16px;
+}
