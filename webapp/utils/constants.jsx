@@ -228,6 +228,7 @@ export const TutorialSteps = {
 // MODIFIED 2017-02-27: updating default theme
 // MODIFIED 2017-02-27: changed system name and icon
 // MODIFIED 2017-03-02: changing default channels to capsule and general
+// MODIFIED 2017-03-08: Adding circular pro font
 export const Constants = {
     Preferences,
     SocketEvents,
@@ -636,11 +637,12 @@ export const Constants = {
         Roboto: 'font--roboto',
         'PT Sans': 'font--pt_sans',
         Lato: 'font--lato',
+        'Circular Pro': 'font--circular_pro',
         'Source Sans Pro': 'font--source_sans_pro',
         'Exo 2': 'font--exo_2',
         Ubuntu: 'font--ubuntu'
     },
-    DEFAULT_FONT: 'Open Sans',
+    DEFAULT_FONT: 'Circular Pro',
     KeyCodes: {
         BACKSPACE: 8,
         TAB: 9,
