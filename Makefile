@@ -1,4 +1,4 @@
-.PHONY: build package run stop run-client run-server stop-client stop-server restart restart-server restart-client start-docker clean-dist clean nuke check-style check-client-style check-server-style check-unit-tests test dist setup-mac prepare-enteprise run-client-tests setup-run-client-tests cleanup-run-client-tests test-client build-linux build-osx build-windows internal-test-client
+.PHONY: build package run stop run-client run-server stop-client stop-server restart restart-server restart-client start-docker clean-dist clean nuke check-style check-client-style check-server-style check-unit-tests test dist setup-mac prepare-enteprise run-client-tests setup-run-client-tests cleanup-run-client-tests test-client build-linux build-osx build-windows internal-test-client s3 release
 
 # For golang 1.5.x compatibility (remove when we don't want to support it anymore)
 export GO15VENDOREXPERIMENT=1
@@ -9,7 +9,7 @@ BUILD_DATE = $(shell date -u)
 BUILD_HASH = $(shell git rev-parse HEAD)
 # If we don't set the build number it defaults to dev
 ifeq ($(BUILD_NUMBER),)
-	BUILD_NUMBER := dev
+	BUILD_NUMBER := $(shell git describe --abbrev=0)
 endif
 BUILD_ENTERPRISE_DIR ?= ../enterprise
 BUILD_ENTERPRISE ?= true
@@ -51,6 +51,28 @@ DIST_PATH=$(DIST_ROOT)/mattermost
 
 # Tests
 TESTS=.
+
+# MODIFIED 2017-03-13: adding release target
+release: s3 all
+	$(eval LINUX_DIST := $(DIST_PATH)-$(BUILD_TYPE_NAME)-linux-amd64.tar.gz)
+	$(eval VERSION := $(shell git describe))
+	$(eval S3_DIST := $(DIST_PATH)-$(BUILD_TYPE_NAME)-$(VERSION)-linux-amd64.tar.gz)
+	cp $(LINUX_DIST) $(S3_DIST)
+	@s3cmd -P --access_key=$(S3_ACCESS) --secret_key=$(S3_SECRET) put $(S3_DIST) s3://$(S3_BUCKET)
+
+s3:
+	$(eval S3CMD := $(shell command -v s3cmd 2>/dev/null))
+	$(if $(findstring s3cmd, $(S3CMD)),, $(error "s3cmd is required"))
+
+	$(eval S3_BUCKET := $(shell security find-generic-password -w -a mattermost-s3-bucket))
+	$(if $(S3_BUCKET),, $(error "Could not find mattermost-s3-bucket in keychain"))
+
+	$(eval S3_ACCESS := $(shell security find-generic-password -w -a mattermost-s3-access))
+	$(if $(S3_ACCESS),, $(error "Could not find mattermost-s3-access in keychain"))
+
+	$(eval S3_SECRET := $(shell security find-generic-password -w -a mattermost-s3-secret))
+	$(if $(S3_SECRET),, $(error "Could not find mattermost-s3-secret in keychain"))
+
 
 all: dist
 
