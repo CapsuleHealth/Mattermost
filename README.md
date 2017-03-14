@@ -1,3 +1,21 @@
+# Capsule Specific Instructions #
+
+## Setup ##
+
+To run locally, follow these instructions
+[Developer Machine Setup](http://docs.mattermost.com/developer/developer-setup.html).
+
+Be sure that the repo is at `$GO_PATH/github.com/mattermost/platform`, as that
+is how the import statements work.
+
+## Release ##
+
+1. Add `mattermost-s3-bucket`, `mattermost-s3-access`, and
+   `mattermost-s3-secret` to your OSX keychain as passwords.
+1. Create a release branch from master.
+1. Run `make release` from the release branch.
+1. See anchor repo for deployment instructions.
+
 # Mattermost
 
 Mattermost is an open source, self-hosted Slack-alternative from [https://mattermost.org](https://mattermost.org).
