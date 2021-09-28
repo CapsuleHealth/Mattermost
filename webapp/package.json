@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "dependencies": {
-    "autolinker": "1.2.1",
+    "autolinker": "1.8.3",
     "bootstrap": "3.3.7",
     "bootstrap-colorpicker": "2.3.6",
     "chart.js": "2.4.0",
