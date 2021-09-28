@@ -19,7 +19,7 @@
     "marked": "mattermost/marked#69736482dbad685c398a5eec33a59b5ab06057ac",
     "match-at": "0.1.0",
     "object-assign": "4.1.0",
-    "pdfjs-dist": "1.6.319",
+    "pdfjs-dist": "1.10.100",
     "perfect-scrollbar": "0.6.14",
     "react": "15.4.0",
     "react-addons-pure-render-mixin": "15.4.0",
